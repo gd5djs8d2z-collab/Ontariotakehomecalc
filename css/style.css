@@ -659,6 +659,9 @@ select {
   transition: color 0.15s;
 }
 .footer-col a:hover { color: #fff; text-decoration: none; }
+.more-tools-link div:first-child { font-weight: 600; color: rgba(255,255,255,0.85); }
+.more-tools-link .subtext { font-size: 0.8rem; color: rgba(255,255,255,0.45); margin-top: 2px; }
+.more-tools-link:hover div:first-child { color: #fff; }
 .footer-bottom {
   border-top: 1px solid rgba(255,255,255,0.12);
   padding-top: 20px;
@@ -751,19 +754,37 @@ select {
   .footer-bottom { flex-direction: column; align-items: flex-start; }
   .results-header { flex-direction: column; align-items: flex-start; }
   .hero { padding: 36px 0 52px; }
+  .page-content { padding: 32px 0; }
+  .section { margin-bottom: 32px; }
+  .section h3 { margin-top: 16px; }
+  .ad-unit { min-height: 0; margin: 16px auto; }
+  .ad-unit ins { height: auto !important; min-height: 0; }
 }
 @media (max-width: 480px) {
   .period-grid { grid-template-columns: 1fr; }
   .scenarios-grid { grid-template-columns: 1fr; }
   .hero h1 { font-size: 1.5rem; }
+  .section { margin-bottom: 24px; }
+  .page-content { padding: 24px 0; }
+  .faq-item { padding: 14px 0; }
 }
 
 /* ─── ADS PLACEHOLDER ────────────────────────────────────────────────────────── */
 .ad-unit {
   text-align: center;
   margin: 32px auto;
-  min-height: 90px;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.ad-unit.ad-inactive,
+.ad-unit.ad-inactive ins,
+.ad-unit.ad-inactive .adsbygoogle {
+  display: none !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  max-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
 }
