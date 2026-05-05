@@ -42,12 +42,12 @@ const TAX_CONFIG = {
       { min: 220000,  max: Infinity, rate: 0.1316 }
     ],
     // Ontario Basic Personal Amount
-    bpa: 12399,
+    bpa: 12989,
     creditRate: 0.0505,
     // Surtax thresholds (applied to basic Ontario tax)
     surtax: {
       threshold1: 5818,  rate1: 0.20,
-      threshold2: 7444,  rate2: 0.36
+      threshold2: 7446,  rate2: 0.36
     }
   },
 
