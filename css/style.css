@@ -136,6 +136,7 @@ a:hover { color: var(--accent-hover); text-decoration: underline; }
   letter-spacing: -0.03em;
   line-height: 1.2;
   margin-bottom: 10px;
+  text-wrap: balance;
 }
 .hero p {
   font-size: 1rem;
@@ -431,6 +432,7 @@ select {
   color: var(--text-primary);
   margin-bottom: 16px;
   line-height: 1.25;
+  text-wrap: balance;
 }
 .section h3 {
   font-size: 1.05rem;
@@ -685,6 +687,7 @@ select {
   font-size: clamp(1.4rem, 3vw, 2rem);
   font-weight: 700;
   letter-spacing: -0.025em;
+  text-wrap: balance;
 }
 .page-hero p {
   color: rgba(255,255,255,0.75);
@@ -761,12 +764,18 @@ select {
   .ad-unit ins { height: auto !important; min-height: 0; }
 }
 @media (max-width: 480px) {
+  .container { padding: 0 16px; }
   .period-grid { grid-template-columns: 1fr; }
   .scenarios-grid { grid-template-columns: 1fr; }
   .hero h1 { font-size: 1.5rem; }
   .section { margin-bottom: 24px; }
   .page-content { padding: 24px 0; }
   .faq-item { padding: 14px 0; }
+}
+@media (max-width: 360px) {
+  .container { padding: 0 12px; }
+  .hero h1 { font-size: 1.35rem; }
+  .page-hero h1 { font-size: 1.3rem; }
 }
 
 /* ─── ADS PLACEHOLDER ────────────────────────────────────────────────────────── */
