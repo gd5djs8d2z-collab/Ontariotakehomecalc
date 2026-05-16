@@ -29,13 +29,13 @@ const NETWORK_TOOLS = [
     live: true
   },
   {
-    name: "CPP Calculator",
+    name: "CPP Calc",
     desc: "Calculate your Canada Pension Plan contributions based on current CRA rates and income thresholds.",
     url: "https://cppcalc.ca",
     live: true
   },
   {
-    name: "EI Calculator Canada",
+    name: "EI Calc",
     desc: "Calculate your Employment Insurance premiums based on insurable earnings and the 2026 MIE ceiling.",
     url: "https://eicalc.ca",
     live: true
