@@ -27,5 +27,17 @@ const NETWORK_TOOLS = [
     desc: "Estimate your Ontario net pay after federal tax, provincial tax, CPP, EI, and OHP.",
     url: "https://ontariotakehomecalc.ca",
     live: true
+  },
+  {
+    name: "CPP Calculator",
+    desc: "Calculate your Canada Pension Plan contributions based on current CRA rates and income thresholds.",
+    url: "https://cppcalc.ca",
+    live: true
+  },
+  {
+    name: "EI Calculator Canada",
+    desc: "Calculate your Employment Insurance premiums based on insurable earnings and the 2026 MIE ceiling.",
+    url: "https://eicalc.ca",
+    live: true
   }
 ];
