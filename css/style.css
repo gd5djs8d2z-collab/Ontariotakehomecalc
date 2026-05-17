@@ -471,7 +471,7 @@ select {
 
 /* ─── CONTENT SECTIONS ───────────────────────────────────────────────────────── */
 .page-content {
-  padding: 40px 0 64px;
+  padding: 40px 20px 64px;
 }
 .section {
   margin-bottom: 56px;
@@ -833,7 +833,7 @@ select {
   .footer-bottom { flex-direction: column; align-items: flex-start; gap: 6px; }
   .results-header { flex-direction: column; align-items: flex-start; }
   .hero { padding: 36px 0 52px; }
-  .page-content { padding: 32px 0; }
+  .page-content { padding: 32px 16px; }
   .section { margin-bottom: 32px; }
   .section h3 { margin-top: 16px; }
   .ad-unit { min-height: 0; margin: 16px auto; }
@@ -845,19 +845,22 @@ select {
   .related-grid { grid-template-columns: 1fr; gap: 10px; }
 }
 @media (max-width: 640px) {
-  .header-nav { gap: 14px; }
+  .header-nav { gap: 10px; flex-shrink: 1; }
   .header-nav a { font-size: 0.8rem; }
   .calc-body { padding: 16px; }
   .authority-section { padding: 20px 16px 18px; }
 }
 
 @media (max-width: 480px) {
+  .year-badge { display: none; }
+  .header-nav { gap: 8px; }
+  .header-nav a { font-size: 0.75rem; }
   .container { padding: 0 16px; }
   .period-grid { grid-template-columns: 1fr; }
   .scenarios-grid { grid-template-columns: 1fr; }
   .hero h1 { font-size: 1.5rem; }
   .section { margin-bottom: 24px; }
-  .page-content { padding: 24px 0; }
+  .page-content { padding: 24px 16px; }
   .faq-item { padding: 14px 0; }
   /* Small phone: tighter page-body, consistent card padding */
   .page-body { padding: 28px 16px; }
