@@ -23,9 +23,9 @@ const NETWORK_TOOLS = [
     live: true
   },
   {
-    name: "Ontario Take Home Calc",
-    desc: "Estimate your Ontario net pay after federal tax, provincial tax, CPP, EI, and OHP.",
-    url: "https://ontariotakehomecalc.ca",
+    name: "Marginal Tax Calc",
+    desc: "Find your Ontario marginal tax rate on additional income — federal + provincial brackets, CPP, EI, and surtax combined.",
+    url: "https://marginaltaxcalc.ca",
     live: true
   },
   {
