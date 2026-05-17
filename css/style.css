@@ -75,6 +75,7 @@ a:hover { color: var(--accent-hover); text-decoration: underline; }
   align-items: center;
   justify-content: space-between;
   height: 58px;
+  padding: 0 20px;
 }
 .logo {
   font-size: 1.05rem;
@@ -83,8 +84,10 @@ a:hover { color: var(--accent-hover); text-decoration: underline; }
   letter-spacing: -0.02em;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
+  text-decoration: none;
 }
+.logo:hover { color: rgba(255,255,255,0.85); text-decoration: none; }
 .logo-icon {
   width: 32px;
   height: 32px;
@@ -128,20 +131,40 @@ a:hover { color: var(--accent-hover); text-decoration: underline; }
 .hero {
   background: var(--accent);
   color: #fff;
-  padding: 48px 0 56px;
+  padding: 32px 20px 28px;
+  border-bottom: 3px solid var(--accent-mid);
+}
+.hero-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
 }
 .hero h1 {
-  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  font-size: clamp(1.4rem, 4vw, 2rem);
   font-weight: 700;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.02em;
   line-height: 1.2;
   margin-bottom: 10px;
-  text-wrap: balance;
+  color: #fff;
 }
 .hero p {
-  font-size: 1rem;
-  color: rgba(255,255,255,0.80);
-  max-width: 520px;
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.82);
+  max-width: 620px;
+  line-height: 1.6;
+}
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 20px;
+  padding: 4px 12px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  margin-bottom: 14px;
+  color: rgba(255,255,255,0.95);
 }
 
 /* ─── CALCULATOR CARD ────────────────────────────────────────────────────────── */
@@ -632,10 +655,11 @@ select {
 
 /* ─── FOOTER ──────────────────────────────────────────────────────────────────── */
 .site-footer {
-  background: var(--text-primary);
-  color: rgba(255,255,255,0.65);
-  padding: 48px 0 32px;
-  margin-top: 64px;
+  background: #1a4f2e;
+  color: rgba(255,255,255,0.7);
+  padding: 28px 20px;
+  margin-top: 20px;
+  font-size: 0.82rem;
 }
 .footer-grid {
   display: grid;
@@ -757,8 +781,9 @@ select {
   .calc-form-section, .calc-results-section { padding: 24px 20px; }
   .period-grid { grid-template-columns: 1fr 1fr; }
   .scenarios-grid { grid-template-columns: 1fr 1fr; }
-  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
-  .footer-bottom { flex-direction: column; align-items: flex-start; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+  .footer-brand { grid-column: 1 / -1; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; gap: 6px; }
   .results-header { flex-direction: column; align-items: flex-start; }
   .hero { padding: 36px 0 52px; }
   .page-content { padding: 32px 0; }
