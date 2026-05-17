@@ -74,6 +74,8 @@ a:hover { color: var(--accent-hover); text-decoration: underline; }
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: nowrap;
+  min-width: 0;
   height: 58px;
   padding: 0 20px;
 }
@@ -101,10 +103,10 @@ a:hover { color: var(--accent-hover); text-decoration: underline; }
 .header-nav {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 20px;
 }
 .header-nav a {
-  color: rgba(255,255,255,0.80);
+  color: rgba(255,255,255,0.85);
   font-size: 0.875rem;
   font-weight: 500;
   padding: 6px 12px;
@@ -170,12 +172,13 @@ a:hover { color: var(--accent-hover); text-decoration: underline; }
 /* ─── CALCULATOR CARD ────────────────────────────────────────────────────────── */
 .calc-card {
   background: var(--surface);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-lg);
-  margin-top: -28px;
-  position: relative;
-  z-index: 10;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
   overflow: hidden;
+  margin-bottom: 28px;
+}
+.calc-body {
+  padding: 24px;
 }
 .calc-form-section {
   padding: 32px 36px;
@@ -480,6 +483,17 @@ select {
   padding: 28px 32px;
   margin-bottom: 20px;
 }
+.authority-section {
+  background: var(--surface);
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  padding: 28px 28px 24px;
+  margin-bottom: 20px;
+  border: 1px solid #e0dfd8;
+}
+.authority-section p { font-size: 0.9rem; line-height: 1.65; color: var(--text-secondary); margin-bottom: 10px; }
+.authority-section h2 { font-size: 1.15rem; font-weight: 700; color: var(--text-primary); margin-bottom: 14px; letter-spacing: -0.01em; }
+.authority-section h3 { font-size: 0.95rem; font-weight: 600; color: var(--accent); margin: 18px 0 8px; }
 .info-box.green {
   background: var(--accent-light);
   border-color: rgba(45,122,71,0.25);
@@ -774,8 +788,8 @@ select {
 
 /* ─── RESPONSIVE ──────────────────────────────────────────────────────────────── */
 @media (max-width: 768px) {
-  .header-inner { height: auto; padding: 8px 16px; flex-wrap: wrap; gap: 6px; }
-  .header-nav { display: flex; flex-wrap: wrap; gap: 4px; }
+  .header-inner { padding: 0 14px; }
+  .header-nav { gap: 14px; }
   .header-nav a { font-size: 0.78rem; padding: 4px 8px; }
   .form-grid { grid-template-columns: 1fr; }
   .calc-form-section, .calc-results-section { padding: 24px 20px; }
@@ -797,6 +811,13 @@ select {
   .container { padding: 0 16px; }
   .related-grid { grid-template-columns: 1fr; gap: 10px; }
 }
+@media (max-width: 640px) {
+  .header-nav { gap: 14px; }
+  .header-nav a { font-size: 0.8rem; }
+  .calc-body { padding: 16px; }
+  .authority-section { padding: 20px 16px 18px; }
+}
+
 @media (max-width: 480px) {
   .container { padding: 0 16px; }
   .period-grid { grid-template-columns: 1fr; }
