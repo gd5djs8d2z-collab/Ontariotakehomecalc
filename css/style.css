@@ -53,7 +53,7 @@ a:hover { color: var(--accent-hover); text-decoration: underline; }
 .container {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 20px;
 }
 .content-width {
   max-width: var(--content-width);
@@ -88,6 +88,9 @@ a:hover { color: var(--accent-hover); text-decoration: underline; }
   align-items: center;
   gap: 8px;
   text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+  min-width: 0;
 }
 .logo:hover { color: rgba(255,255,255,0.85); text-decoration: none; }
 .logo-icon {
@@ -104,14 +107,13 @@ a:hover { color: var(--accent-hover); text-decoration: underline; }
   display: flex;
   align-items: center;
   gap: 20px;
+  flex-shrink: 0;
 }
 .header-nav a {
   color: rgba(255,255,255,0.85);
   font-size: 0.875rem;
   font-weight: 500;
-  padding: 6px 12px;
-  border-radius: var(--radius);
-  transition: background 0.15s, color 0.15s;
+  transition: color 0.15s;
 }
 .header-nav a:hover {
   color: #fff;
@@ -177,6 +179,37 @@ a:hover { color: var(--accent-hover); text-decoration: underline; }
   overflow: hidden;
   margin-bottom: 28px;
 }
+.calc-header {
+  background: var(--accent-light);
+  border-bottom: 1px solid var(--border);
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.calc-header h2 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin: 0;
+}
+.calc-icon { font-size: 1.2rem; }
+.trust-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 10px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 8px 16px;
+  margin: 0 0 16px 0;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+}
+.ts-item { display: flex; align-items: center; gap: 4px; }
+.ts-item .ts-check { color: var(--accent-mid); font-weight: 700; }
+
 .calc-body {
   padding: 24px;
 }
@@ -438,7 +471,7 @@ select {
 
 /* ─── CONTENT SECTIONS ───────────────────────────────────────────────────────── */
 .page-content {
-  padding: 64px 0;
+  padding: 40px 0 64px;
 }
 .section {
   margin-bottom: 56px;
@@ -480,7 +513,7 @@ select {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  padding: 28px 32px;
+  padding: 28px 28px 24px;
   margin-bottom: 20px;
 }
 .authority-section {
@@ -856,4 +889,18 @@ select {
   margin: 0 !important;
   padding: 0 !important;
   overflow: hidden !important;
+}
+
+.label-sub {
+  font-weight: 400;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+.hourly-link {
+  display: inline-block;
+  margin-top: 6px;
+  color: var(--accent);
+  font-size: 0.82rem;
+  text-decoration: underline;
+  cursor: pointer;
 }

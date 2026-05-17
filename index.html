@@ -37,9 +37,9 @@
       <a href="/" class="logo">
         <span class="logo-icon">🍁</span>
         Ontario Take Home Calc
-        <span class="year-badge">2026</span>
-      </a>
+        </a>
       <nav class="header-nav">
+        <span class="year-badge">2026</span>
         <a href="index.html">Home</a>
         <a href="faq.html">FAQ</a>
         <a href="about.html">About</a>
@@ -65,15 +65,25 @@
   <div class="content-width">
     <div class="calc-card" id="calculator">
 
-      <!-- INPUTS -->
+      <div class="calc-header">
+        <span class="calc-icon">📊</span>
+        <h2>Your Take Home Pay</h2>
+      </div>
+
       <div class="calc-form-section">
+        <div class="trust-strip">
+          <span class="ts-item"><span class="ts-check">✓</span> 2026 CRA rates</span>
+          <span class="ts-item"><span class="ts-check">✓</span> Federal + Ontario</span>
+          <span class="ts-item"><span class="ts-check">✓</span> CPP1 + CPP2 + EI</span>
+        </div>
         <div class="form-grid">
           <div class="form-group full">
-            <label for="grossIncome">Annual Gross Income</label>
+            <label for="grossIncome">Annual gross income<span class="label-sub"> — Your total employment income before any deductions</span></label>
             <div class="input-prefix-wrap">
               <span class="input-prefix">$</span>
               <input type="number" id="grossIncome" min="0" max="2000000" step="1000" value="75000" placeholder="e.g. 75000">
             </div>
+            <span class="hourly-link">+ Hourly worker? Calculate annual income</span>
           </div>
           <div class="form-group full">
             <label for="payFrequency">Pay Frequency</label>
