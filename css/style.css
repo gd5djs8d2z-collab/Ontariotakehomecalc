@@ -661,9 +661,11 @@ select {
   transition: color 0.15s;
 }
 .footer-col a:hover { color: #fff; text-decoration: none; }
-.more-tools-link div:first-child { font-weight: 600; color: rgba(255,255,255,0.85); }
+.more-tools-link div:first-child { font-weight: 700 !important; color: rgba(255,255,255,0.85); }
+.more-tools-title { font-weight: 700 !important; color: rgba(255,255,255,0.85); }
 .more-tools-link .subtext { font-size: 0.8rem; color: rgba(255,255,255,0.45); margin-top: 2px; }
 .more-tools-link:hover div:first-child { color: #fff; }
+.more-tools-link:hover .more-tools-title { color: #fff; }
 .footer-bottom {
   border-top: 1px solid rgba(255,255,255,0.12);
   padding-top: 20px;
