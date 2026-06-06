@@ -10,7 +10,7 @@
  * Hub: https://calc-hq.ca
  */
 
-const NETWORK_TOOLS = [
+var NETWORK_TOOLS = [
   {
     name: "Ontario Income Tax Calc",
     label: "Ontario Income Tax Calc — Estimate your Ontario provincial and federal income tax",
@@ -53,58 +53,18 @@ const NETWORK_TOOLS = [
 
   var CURRENT_HOST = window.location.hostname.replace(/^www\./, '');
 
-  function renderFooter() {
-    var container = document.getElementById('network-footer');
-    if (!container) return;
+  // Populate the related-tools div in the footer (matches gold-standard pattern)
+  var container = document.getElementById('related-tools');
+  if (!container) return;
 
-    var tools = NETWORK_TOOLS.filter(function (t) {
-      return t.live && t.url.indexOf(CURRENT_HOST) === -1;
-    });
-
-    var toolLinks = '';
-    tools.forEach(function (t) {
-      toolLinks += '<a href="' + t.url + '" rel="noopener">' + t.label + '</a>';
-    });
-
-    container.innerHTML =
-      '<div class="footer-grid">' +
-        '<div class="footer-brand">' +
-          '<div class="logo">🍁 Ontario Take Home Calc</div>' +
-          '<p>Ontario take-home pay calculations for 2026. All calculations run in your browser. No data stored.</p>' +
-        '</div>' +
-        '<div class="footer-col">' +
-          '<h4>PAGES</h4>' +
-          '<a href="index.html">Home</a>' +
-          '<a href="faq.html">FAQ</a>' +
-          '<a href="about.html">About</a>' +
-          '<a href="contact.html">Contact</a>' +
-        '</div>' +
-        '<div class="footer-col">' +
-          '<h4>LEGAL</h4>' +
-          '<a href="privacy-policy.html">Privacy Policy</a>' +
-          '<a href="disclaimer.html">Disclaimer</a>' +
-          '<a href="terms.html">Terms of Use</a>' +
-        '</div>' +
-        '<div class="footer-col">' +
-          '<h4>RELATED TOOLS</h4>' +
-          toolLinks +
-        '</div>' +
-        '<div class="footer-col">' +
-          '<h4>MORE TOOLS</h4>' +
-          '<a href="https://calc-hq.ca" class="more-tools-link" target="_blank" rel="noopener noreferrer">' +
-            '<span class="more-tools-title">Calc-HQ.ca</span>' +
-            '<span class="subtext">Canadian payroll, tax, and contribution calculators</span>' +
-          '</a>' +
-        '</div>' +
-      '</div>' +
-      '<div class="footer-bottom">' +
-        '<span>© 2026 Ontario Take Home Calc — All calculations run in your browser. No data stored.</span>' +
-        '<span>Tax Year: 2026 | Rates: CRA &amp; ESDC</span>' +
-      '</div>';
-  }
-
-  document.addEventListener('DOMContentLoaded', function () {
-    renderFooter();
+  var tools = NETWORK_TOOLS.filter(function (t) {
+    return t.live && t.url.indexOf(CURRENT_HOST) === -1;
   });
+
+  var html = '';
+  tools.forEach(function (t) {
+    html += '<a href="' + t.url + '" rel="noopener">' + t.name + '</a>';
+  });
+  container.innerHTML = html;
 
 })();
