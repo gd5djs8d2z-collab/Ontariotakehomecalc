@@ -31,39 +31,46 @@
 </head>
 <body>
 
-<!-- HEADER -->
+<!-- ─── Header ─────────────────────────────────────────────────────────── -->
 <header class="site-header">
-  <div class="container">
-    <div class="header-inner">
-      <a href="/" class="logo">
-        <span class="logo-icon">🍁</span>
-        Ontario Take Home Calc
-        </a>
-      <nav class="header-nav">
-        <span class="year-badge">2026</span>
-        <a href="index.html">Home</a>
-        <a href="faq.html">FAQ</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-    </div>
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">
+      <span class="logo-maple">🍁</span>
+      <span class="logo-text">OntarioTakeHome<span>Calc</span>.ca</span>
+    </a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="index.html" class="active">Home</a>
+      <a href="faq.html">FAQ</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <button class="hamburger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
 
-<!-- HERO -->
+<!-- Mobile nav overlay -->
+<div class="mobile-nav-overlay" id="mobile-overlay"></div>
+<nav class="mobile-nav" id="mobile-nav">
+  <a href="index.html">Home</a>
+  <a href="faq.html">FAQ</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<!-- ─── Hero ───────────────────────────────────────────────────────────── -->
 <section class="hero">
-  <div class="container">
-    <div class="content-width">
-      <div class="hero-badge">🇨🇦 2026 · Fully browser-based · No data stored</div>
-      <h1>Ontario Take Home Calc</h1>
-      <p>Estimate your 2026 net pay after federal tax, Ontario provincial tax, CPP, EI, and the Ontario Health Premium. Fully browser-based. No data stored.</p>
-    </div>
+  <div class="hero-inner">
+    <div class="hero-badge">🇨🇦 Ontario take-home pay calculator</div>
+    <h1>Ontario Take Home Pay Calculator — 2026</h1>
+    <p>Estimate your 2026 net pay after federal tax, Ontario provincial tax, CPP, EI, and the Ontario Health Premium. All calculations run in your browser. No data stored.</p>
   </div>
 </section>
 
-<!-- CALCULATOR -->
-<div class="container">
-  <div class="content-width">
+<!-- ─── Main ────────────────────────────────────────────────────────────── -->
+<main class="main-content">
+  <div class="content-col">
     <div class="calc-card" id="calculator">
 
       <div class="calc-header">
@@ -178,25 +185,15 @@
       <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7744853829365165" data-ad-slot="auto" data-ad-format="horizontal"></ins>
     </div>
 
-  </div><!-- end content-width -->
-</div><!-- end container -->
-
-
-<!-- AUTHORITY CONTENT -->
-<div class="container page-content">
-  <div class="content-width">
-
-    <!-- WHAT THIS CALCULATOR DOES -->
-    <section class="section">
-      <div class="section-label">Overview</div>
+    <!-- Understanding Your Result -->
+    <div class="info-section">
       <h2>What This Calculator Does</h2>
       <p>This calculator estimates your annual take-home pay as an Ontario employee by applying 2026 federal and provincial tax rules, CPP contributions, EI premiums, and the Ontario Health Premium to your gross income. All rates come from CRA and ESDC publications for the 2026 tax year.</p>
       <p>Results show your estimated net pay per pay period, monthly, and annually. The basic personal amounts (federal and Ontario) are applied automatically. No other credits or deductions are assumed.</p>
-    </section>
+    </div>
 
-    <!-- EXAMPLE CALCULATION -->
-    <section class="section">
-      <div class="section-label">Worked Example</div>
+    <!-- Example Calculation -->
+    <div class="info-section">
       <h2>Example Calculation: $80,000 Annual Salary</h2>
       <p>Here is a step-by-step example using an $80,000 annual gross income, bi-weekly pay frequency, and 2026 rates. All figures are drawn from the same central rate configuration used by the calculator.</p>
 
@@ -209,37 +206,104 @@
         </tbody>
       </table>
       <p style="font-size:0.82rem;color:var(--text-muted)">Example uses 2026 rates and basic personal amounts only. Other credits not included.</p>
-    </section>
-
-    <!-- METHODOLOGY HUB LINK -->
-    <section class="section">
-      <div class="section-label">Methodology</div>
-      <h2>Calculation Methodology</h2>
-      <p>This calculator applies 2026 CRA and ESDC rates using progressive federal and Ontario bracket systems, with basic personal amounts as non-refundable credits. CPP1/CPP2 and EI are calculated to annual maximums. Ontario Health Premium is applied by income tier. RRSP, additional credits, and employer-specific deductions are not included.</p>
-      <div class="info-box green" style="margin-top:12px">
-        <a href="https://calc-hq.ca/methodology/take-home-pay/" style="font-weight:600;color:var(--accent)">Full methodology: Ontario Take Home Pay Calculator – Calc-HQ.ca</a>
-      </div>
-    </section>
-
-    <!-- Ad unit -->
-    <div class="ad-unit ad-inactive">
-      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7744853829365165" data-ad-slot="auto" data-ad-format="rectangle"></ins>
     </div>
 
+    <!-- Ad unit -->
+    <div class="ad-unit ad-inactive" aria-hidden="true">
+      <ins class="adsbygoogle"
+           data-ad-client="ca-pub-7744853829365165"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+    </div>
 
+    <!-- Methodology -->
+    <div class="info-section">
+      <h2>Calculation Methodology</h2>
+      <p>This calculator applies 2026 CRA and ESDC rates using progressive federal and Ontario bracket systems, with basic personal amounts as non-refundable credits. CPP1/CPP2 and EI are calculated to annual maximums. Ontario Health Premium is applied by income tier. RRSP, additional credits, and employer-specific deductions are not included.</p>
 
-  </div>
-</div>
+      <div class="info-box">
+        <a href="https://calc-hq.ca/methodology/take-home-pay/">Full methodology: Ontario Take Home Pay Calculator – Calc-HQ.ca</a>
+      </div>
+    </div>
 
-<!-- FOOTER -->
+  </div><!-- end content-col -->
+</main>
+
+<!-- ─── Footer ──────────────────────────────────────────────────────────── -->
 <footer class="site-footer">
-  <div id="network-footer"></div>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">🍁 OntarioTakeHomeCalc.ca</div>
+        <p>Ontario take-home pay calculations for 2026. All calculations run in your browser. No data stored.</p>
+      </div>
+      <div class="footer-col">
+        <h4>PAGES</h4>
+        <a href="index.html">Home</a>
+        <a href="faq.html">FAQ</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>LEGAL</h4>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="disclaimer.html">Disclaimer</a>
+        <a href="terms.html">Terms of Use</a>
+      </div>
+      <div class="footer-col">
+        <h4>RELATED TOOLS</h4>
+        <div id="related-tools"></div>
+        <a href="https://calc-hq.ca/" class="more-tools-link" rel="noopener"><strong>More Tools</strong> → Calc-HQ.ca</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 OntarioTakeHomeCalc.ca — Part of the <a href="https://calc-hq.ca/" rel="noopener">Calc-HQ.ca</a> network</span>
+      <span>For informational purposes only. Not tax advice.</span>
+    </div>
+  </div>
 </footer>
 
-<script src="js/network.js"></script>
-<script src="js/ads.js"></script>
 <script src="js/config.js"></script>
 <script src="js/calculator.js"></script>
+<script src="js/ads.js"></script>
+<script src="js/network.js"></script>
+
+<!-- Hamburger menu logic -->
+<script>
+(function() {
+  var hamburger = document.querySelector('.hamburger');
+  var mobileNav = document.getElementById('mobile-nav');
+  var overlay = document.getElementById('mobile-overlay');
+
+  function toggleMenu() {
+    var isOpen = hamburger.classList.toggle('active');
+    mobileNav.classList.toggle('active', isOpen);
+    overlay.classList.toggle('active', isOpen);
+    hamburger.setAttribute('aria-expanded', String(isOpen));
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  }
+
+  function closeMenu() {
+    hamburger.classList.remove('active');
+    mobileNav.classList.remove('active');
+    overlay.classList.remove('active');
+    hamburger.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+
+  if (hamburger) {
+    hamburger.addEventListener('click', toggleMenu);
+  }
+  if (overlay) {
+    overlay.addEventListener('click', closeMenu);
+  }
+  if (mobileNav) {
+    mobileNav.querySelectorAll('a').forEach(function(a) {
+      a.addEventListener('click', closeMenu);
+    });
+  }
+})();
+</script>
 <script>
 // ─── UI CONTROLLER ────────────────────────────────────────────────────────────
 
@@ -342,37 +406,10 @@ function buildExampleTable() {
   `;
 }
 
-// ─── RELATED TOOLS (driven by network.js) ─────────────────────────────────────
-function buildRelatedTools() {
-  const grid = document.getElementById('relatedGrid');
-  if (!grid) return;
-  grid.innerHTML = '';
-  if (typeof NETWORK_TOOLS === 'undefined') return;
-  const thisSite = 'ontariotakehomecalc.ca';
-  const tools = NETWORK_TOOLS.filter(t => t.live === true && !t.url.includes(thisSite));
-  if (tools.length === 0) {
-    grid.innerHTML = '<p style="color:var(--text-muted);font-size:0.9rem">No related tools available.</p>';
-    return;
-  }
-  tools.forEach(tool => {
-    const a = document.createElement('a');
-    a.className = 'related-card';
-    a.href = tool.url;
-    a.target = '_blank';
-    a.rel = 'noopener';
-    a.innerHTML = `
-      <div class="related-card-title">${tool.name}</div>
-      <div class="related-card-desc">${tool.desc}</div>
-    `;
-    grid.appendChild(a);
-  });
-}
-
 // ─── INIT ─────────────────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
   const fy = document.getElementById('footerYear'); if (fy) fy.textContent = TAX_CONFIG.taxYear;
   buildExampleTable();
-  buildRelatedTools();
 
   // Auto-run on income input change
   document.getElementById('grossIncome').addEventListener('keydown', e => {
