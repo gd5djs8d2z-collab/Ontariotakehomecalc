@@ -439,9 +439,8 @@ select {
 .breakdown-label {
   font-size: 0.9rem;
   color: var(--text-secondary);
-  display: flex;
-  align-items: center;
-  gap: 8px;
+  flex: 1 1 auto;
+  min-width: 0;
 }
 .breakdown-row.total .breakdown-label { color: rgba(255,255,255,0.85); }
 .breakdown-value {
@@ -450,12 +449,16 @@ select {
   font-weight: 500;
   color: var(--text-primary);
   white-space: nowrap;
+  flex-shrink: 0;
+  text-align: right;
 }
 .breakdown-row.total .breakdown-value { color: #fff; font-size: 1rem; }
 .breakdown-sub {
   font-size: 0.78rem;
   color: var(--text-muted);
   font-family: 'IBM Plex Mono', monospace;
+  display: block;
+  margin-top: 3px;
 }
 .deduction-amount { color: var(--red); }
 .breakdown-row.total .deduction-amount { color: rgba(255,220,220,1); }
@@ -1009,6 +1012,12 @@ select {
   .page-body { padding: 36px 20px; }
   .container { padding: 0 16px; }
   .related-grid { grid-template-columns: 1fr; gap: 10px; }
+  /* Mobile result breakdown layout */
+  .breakdown-row { flex-wrap: wrap; padding: 10px 12px; gap: 0; }
+  .breakdown-label { font-size: 0.85rem; }
+  .breakdown-value { font-size: 0.85rem; }
+  .breakdown-sub { margin-top: 4px; }
+  .breakdown-row.section-header { padding: 6px 12px; font-size: 0.7rem; }
 }
 
 /* 430px */
@@ -1024,6 +1033,10 @@ select {
   .info-section { padding: 16px; }
   .info-box { padding: 18px 16px; }
   .related-card { padding: 14px 16px; }
+  .breakdown-row { padding: 8px 10px; }
+  .breakdown-label { font-size: 0.82rem; }
+  .breakdown-value { font-size: 0.82rem; }
+  .breakdown-sub { font-size: 0.72rem; }
 }
 
 /* 390px */
