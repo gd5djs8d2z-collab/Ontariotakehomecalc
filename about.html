@@ -62,49 +62,19 @@
 <div class="page-body">
 
   <h2>Why Net Pay Is Harder to Predict Than People Expect</h2>
-  <p>Most Ontario employees have a reasonable sense of their gross salary. Their actual take-home is often several thousand dollars lower than they expect — and the gap isn't explained by a single number. Federal income tax, Ontario provincial income tax, CPP contributions, EI premiums, and the Ontario Health Premium all come off the top independently, each governed by different rules, different thresholds, and different rate structures.</p>
-  <p>This calculator runs all five of those deductions in a single pass and returns your estimated net pay — annually, monthly, bi-weekly, or per pay period — so the full picture is visible before a job offer is signed or a budget is built.</p>
+  <p>Most Ontario employees have a reasonable sense of their gross salary. Their actual take-home is often several thousand dollars lower — and the gap isn't explained by a single number. Federal income tax, Ontario provincial tax, CPP contributions, EI premiums, and the Ontario Health Premium all come off independently, each with different rules and thresholds.</p>
+  <p>This calculator runs all five deductions in a single pass and returns your estimated net pay — annually, monthly, bi-weekly, or per pay period — so the full picture is visible before a job offer is signed or a budget is built.</p>
 
-  <h2>The Five Deductions This Tool Covers</h2>
-  <p>Each deduction is calculated independently using 2026 rates:</p>
-  <ul>
-    <li><strong>Federal income tax</strong> — Applied bracket by bracket from 14% on income up to $57,375 through to 33% on income above $253,415, minus the 2026 federal basic personal amount of $16,129.</li>
-    <li><strong>Ontario provincial income tax</strong> — Applied across Ontario's five brackets (5.05% to 13.16%), minus the Ontario basic personal amount of $12,399, plus the Ontario surtax on provincial tax above $5,554.</li>
-    <li><strong>CPP contributions</strong> — 5.95% on employment income between the basic exemption ($3,500) and the YMPE ($74,600), plus a second-tier CPP2 rate of 4% on earnings between the YMPE and the YAMPE ($85,000).</li>
-    <li><strong>EI premiums</strong> — $1.63 per $100 of insurable earnings, up to the 2026 maximum insurable earnings of $68,900.</li>
-    <li><strong>Ontario Health Premium</strong> — A provincial levy on taxable income ranging from $0 (below $20,000) to $900 (above $200,600), applied on a stepped schedule set by the Ontario Ministry of Finance.</li>
-  </ul>
-  <p>The OHP is frequently omitted from generic salary calculators. Including it produces a net pay figure closer to what Ontario employees actually see on their paycheques.</p>
-
-  <h2>Pay Frequency and Why It Matters</h2>
-  <p>Annual net pay figures can obscure the reality of day-to-day budgeting. Someone earning $75,000 gross might see $56,400 net annually — but whether their biweekly cheque is $2,169 or their monthly deposit is $4,700 depends on how their employer pays them. This calculator divides the annual net pay across the pay frequency you select: weekly, bi-weekly, semi-monthly, or monthly. The per-period output is the number most useful for actual household planning.</p>
-
-  <h2>Gross vs. Net: What the Calculator Models</h2>
-  <p>You enter a gross annual income. The calculator applies all five deductions in sequence using the 2026 rules for each, starting from taxable income and working through to the net figure. Federal and provincial taxes are computed separately on the same taxable income base; CPP and EI are computed on employment earnings; OHP is computed on Ontario taxable income. The outputs are summed to produce total annual deductions and total net pay, then divided by the selected pay frequency.</p>
-  <p>All constants — brackets, rates, personal amounts, CPP thresholds, EI maximums, OHP steps — are stored in a single configuration file. There are no hardcoded values scattered through the calculation logic.</p>
-
-  <h2>Who Uses This</h2>
-  <p>The most common use cases are straightforward: comparing two job offers stated in gross salary terms, checking whether a gross number meets a monthly budget target, or quickly understanding how much of a salary increase will actually land as additional take-home. The pay-frequency output is useful for employees paid bi-weekly who want to know what a new gross salary means per cheque, without doing the deduction math manually.</p>
-
-  <h2>Data Sources</h2>
-  <p>All rates used in this calculator come from 2026 CRA and Ontario government publications:</p>
-  <ul>
-    <li>CRA — Federal income tax brackets and rates (2026)</li>
-    <li>CRA — Federal basic personal amount ($16,129)</li>
-    <li>CRA — Ontario provincial tax rates and brackets (2026)</li>
-    <li>CRA — CPP contribution rate (5.95%), YMPE ($74,600), CPP2 rate (4%), YAMPE ($85,000)</li>
-    <li>ESDC — EI premium rate ($1.63 per $100), maximum insurable earnings ($68,900)</li>
-    <li>Ontario Ministry of Finance — Ontario Health Premium schedule and OBP ($12,399)</li>
-  </ul>
-  <p>This tool is maintained by the <a href="https://calc-hq.ca" target="_blank" rel="noopener">Calc-HQ.ca</a> network — an independent Canadian financial utility publisher focused on browser-based tools for Canadian employees and taxpayers. Questions or corrections can be directed to <a href="mailto:partnerships@calc-hq.ca">partnerships@calc-hq.ca</a>.</p>
+  <h2>Who Uses This Calculator</h2>
+  <p>Comparing two job offers stated in gross salary, checking whether a gross number meets a monthly budget, or understanding how much of a raise actually lands as take-home pay. The pay-frequency output is useful for employees who want to know what a new salary means per cheque, without doing the deduction math manually.</p>
 
   <h2>Limitations</h2>
-  <p>Results are estimates based on the 2026 basic personal amounts and standard full-year employment. These are not modelled and will affect actual take-home pay:</p>
+  <p>Results are estimates based on 2026 basic personal amounts and standard full-year employment. These are not modelled and will affect actual take-home pay:</p>
   <ul>
     <li>TD1 credits beyond the basic personal amount (spousal, disability, eligible dependant, etc.)</li>
     <li>RRSP deductions or pension adjustments</li>
     <li>Union dues, professional fees, or employer-side benefit costs</li>
-    <li>Mid-year employment starts — CPP and EI deductions depend on full-year earnings; partial-year results differ</li>
+    <li>Mid-year employment starts — CPP and EI deductions depend on full-year earnings</li>
     <li>Quebec — this tool applies Ontario provincial rates only</li>
     <li>Self-employment income, investment income, or other non-employment sources</li>
   </ul>
@@ -112,6 +82,12 @@
 
   <h2>Privacy</h2>
   <p>No income figure you enter is sent anywhere. All calculations run locally in your browser. No account is needed, and no tracking cookies are set by this tool. See the <a href="privacy-policy.html">Privacy Policy</a> for full details.</p>
+
+  <h2>Full Methodology</h2>
+  <p>Detailed formulas, rate tables, assumptions, and source citations are maintained separately on the Calc-HQ methodology page.</p>
+  <div class="info-box">
+    <a href="https://calc-hq.ca/methodology/take-home-pay/">Full methodology: Ontario Take Home Pay Calculator – Calc-HQ.ca</a>
+  </div>
 
 </div>
 
