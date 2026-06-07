@@ -185,27 +185,30 @@
       <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7744853829365165" data-ad-slot="auto" data-ad-format="horizontal"></ins>
     </div>
 
-    <!-- Understanding Your Result -->
+    <!-- What This Calculator Does -->
     <div class="info-section">
       <h2>What This Calculator Does</h2>
-      <p>This calculator estimates your annual take-home pay as an Ontario employee by applying 2026 federal and provincial tax rules, CPP contributions, EI premiums, and the Ontario Health Premium to your gross income. All rates come from CRA and ESDC publications for the 2026 tax year.</p>
-      <p>Results show your estimated net pay per pay period, monthly, and annually. The basic personal amounts (federal and Ontario) are applied automatically. No other credits or deductions are assumed.</p>
+      <p>This calculator estimates your take-home pay as an Ontario employee. It applies 2026 federal income tax, Ontario provincial income tax, CPP contributions (CPP1 and CPP2), EI premiums, and the Ontario Health Premium to your gross salary. Federal and Ontario basic personal amounts are applied automatically. Results show your estimated net pay per pay period, monthly, and annually. No other credits or deductions are assumed.</p>
     </div>
 
     <!-- Example Calculation -->
     <div class="info-section">
       <h2>Example Calculation: $80,000 Annual Salary</h2>
-      <p>Here is a step-by-step example using an $80,000 annual gross income, bi-weekly pay frequency, and 2026 rates. All figures are drawn from the same central rate configuration used by the calculator.</p>
-
-      <table class="example-table" id="exampleTable">
+      <p>Estimated take-home for an Ontario employee earning $80,000 gross, paid bi-weekly, using 2026 rates.</p>
+      <table class="example-table">
         <thead>
-          <tr><th>Component</th><th>Calculation</th><th>Amount</th></tr>
+          <tr><th>Component</th><th>Amount</th></tr>
         </thead>
-        <tbody id="exampleBody">
-          <!-- populated by JS from config -->
+        <tbody>
+          <tr><td>Gross Annual Income</td><td>$80,000.00</td></tr>
+          <tr><td>Federal Tax</td><td>−$10,292.73</td></tr>
+          <tr><td>Ontario Tax</td><td>−$4,454.52</td></tr>
+          <tr><td>CPP Contributions</td><td>−$4,230.45</td></tr>
+          <tr><td>EI Premiums</td><td>−$1,123.07</td></tr>
+          <tr class="table-result"><td><strong>Estimated Annual Take-Home</strong></td><td><strong>$58,933.23</strong></td></tr>
         </tbody>
       </table>
-      <p style="font-size:0.82rem;color:var(--text-muted)">Example uses 2026 rates and basic personal amounts only. Other credits not included.</p>
+      <p style="font-size:0.82rem;color:var(--text-muted)">Estimate using 2026 rates and basic personal amounts only. Other credits not included.</p>
     </div>
 
     <!-- Ad unit -->
@@ -219,11 +222,16 @@
     <!-- Methodology -->
     <div class="info-section">
       <h2>Calculation Methodology</h2>
-      <p>This calculator applies 2026 CRA and ESDC rates using progressive federal and Ontario bracket systems, with basic personal amounts as non-refundable credits. CPP1/CPP2 and EI are calculated to annual maximums. Ontario Health Premium is applied by income tier. RRSP, additional credits, and employer-specific deductions are not included.</p>
+      <p>This calculator uses 2026 CRA and Ontario rates. Federal and provincial taxes are calculated using progressive bracket systems with basic personal amounts as non-refundable credits. CPP1 and CPP2 contributions are applied to annual maximums. EI premiums are calculated on insurable earnings up to the annual ceiling. The Ontario Health Premium is applied by income tier. RRSP deductions, additional credits, and employer-specific arrangements are not included.</p>
 
       <div class="info-box">
         <a href="https://calc-hq.ca/methodology/take-home-pay/">Full methodology: Ontario Take Home Pay Calculator – Calc-HQ.ca</a>
       </div>
+    </div>
+
+    <!-- FAQ Handoff -->
+    <div class="info-section">
+      <p>For detailed questions and additional guidance, visit our <a href="faq.html">FAQ page</a>.</p>
     </div>
 
   </div><!-- end content-col -->
@@ -370,46 +378,9 @@ function displayResults(r) {
   document.getElementById('resultsSection').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
 
-// ─── EXAMPLE TABLE (uses config) ─────────────────────────────────────────────
-function buildExampleTable() {
-  const exGross = 80000;
-  const r = calculateTakeHome(exGross, 'biweekly');
-  const body = document.getElementById('exampleBody');
-
-  const cfg = TAX_CONFIG;
-  const federalBPA = calcFederalBPA(exGross);
-  const federalGrossTax = calcProgressiveTax(exGross, cfg.federal.brackets);
-  const federalCredit = federalBPA * cfg.federal.creditRate;
-  const ontarioGrossTax = calcProgressiveTax(exGross, cfg.ontario.brackets);
-  const ontarioCredit = cfg.ontario.bpa * cfg.ontario.creditRate;
-  const ontarioSurtax = calcOntarioSurtax(ontarioGrossTax);
-
-  body.innerHTML = `
-    <tr><td>Gross Annual Income</td><td>—</td><td>${fmt(exGross)}</td></tr>
-    <tr><td colspan="3" style="font-weight:700;background:#f5f5f0;padding:8px 16px;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.06em;color:#7a7a74">Federal Tax</td></tr>
-    <tr><td>Gross federal tax (14%–20.5% brackets)</td><td>${fmt(federalGrossTax)}</td><td></td></tr>
-    <tr><td>Less: Federal BPA credit ($${cfg.federal.bpa.toLocaleString()} × 14%)</td><td>−${fmt(federalCredit)}</td><td></td></tr>
-    <tr><td><strong>Federal Tax Owing</strong></td><td></td><td><strong>${fmt(r.federalTax)}</strong></td></tr>
-    <tr><td colspan="3" style="font-weight:700;background:#f5f5f0;padding:8px 16px;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.06em;color:#7a7a74">Ontario Tax</td></tr>
-    <tr><td>Basic Ontario tax (5.05%–9.15% brackets)</td><td>${fmt(ontarioGrossTax)}</td><td></td></tr>
-    <tr><td>Ontario surtax (20% on tax over $${cfg.ontario.surtax.threshold1.toLocaleString()})</td><td>${fmt(ontarioSurtax)}</td><td></td></tr>
-    <tr><td>Less: Ontario BPA credit ($${cfg.ontario.bpa.toLocaleString()} × 5.05%)</td><td>−${fmt(ontarioCredit)}</td><td></td></tr>
-    <tr><td><strong>Ontario Tax Owing</strong></td><td></td><td><strong>${fmt(r.ontarioTax)}</strong></td></tr>
-    <tr><td colspan="3" style="font-weight:700;background:#f5f5f0;padding:8px 16px;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.06em;color:#7a7a74">Payroll Deductions</td></tr>
-    <tr><td>Ontario Health Premium</td><td>Income $${exGross.toLocaleString()} → OHP tier</td><td>${fmt(r.ohp)}</td></tr>
-    <tr><td>CPP1 (5.95% × [$${cfg.cpp.ympe.toLocaleString()} − $${cfg.cpp.basicExemption.toLocaleString()}])</td><td>${fmt(r.cpp1)}</td><td></td></tr>
-    <tr><td>CPP2 (earnings under YMPE, not applicable)</td><td>$0.00</td><td></td></tr>
-    <tr><td>EI ($1.63 per $100, on $${Math.min(exGross, cfg.ei.mie).toLocaleString()})</td><td>${fmt(r.ei)}</td><td></td></tr>
-    <tr class="table-total"><td><strong>Total Deductions</strong></td><td></td><td><strong>−${fmt(r.totalDeductions)}</strong></td></tr>
-    <tr class="table-result"><td><strong>Estimated Take-Home (Annual)</strong></td><td></td><td><strong>${fmt(r.annualTakeHome)}</strong></td></tr>
-    <tr class="table-result"><td><strong>Bi-Weekly Take-Home</strong></td><td>÷ 26 pay periods</td><td><strong>${fmt(r.perPeriodNet)}</strong></td></tr>
-  `;
-}
-
 // ─── INIT ─────────────────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
   const fy = document.getElementById('footerYear'); if (fy) fy.textContent = TAX_CONFIG.taxYear;
-  buildExampleTable();
 
   // Auto-run on income input change
   document.getElementById('grossIncome').addEventListener('keydown', e => {
